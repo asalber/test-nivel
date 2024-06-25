@@ -1,0 +1,373 @@
+---
+title: Test de nivel de Cálculo
+lang: es
+---
+
+:::{#exr-01}
+Si una máquina fabrica 10800 pastillas en una hora, ¿cuántas pastillas fabrica la máquina por segundo?
+
+a. $1$.
+
+a. $180$.
+
+a. $3$. (*)
+
+a. $5$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-02}
+El resultado de la operación $\dfrac{\sqrt{81}}{\sqrt{9}}$ es
+
+a. $\sqrt{3}$.
+
+a. $\sqrt{9}$. (*)
+
+a. $\sqrt{27}$.
+
+a. $\sqrt{7}$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-03}
+La solución de la ecuación $5^x=625$ es
+
+a. $5$.
+
+a. $4$. (*)
+
+a. $3$.
+
+a. $6$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-04}
+El resultado de la operación $(x^2+3x+2)(x+2)$ es
+
+a. $x^3+5x^2+7x+4$.
+
+a. $x^3+2x^2+7x+2$.
+
+a. $x^3+2x^2+5x+4$.
+
+a. $x^3+2x^2+8x+4$.
+
+a. Las otras opciones son falsas. (*)
+:::
+
+:::{#exr-05}
+Si dividimos $x^5-32$ entre $x-2$ se obtiene un cociente $C(x)$ y un resto $R(x)$ igual a:
+
+a. $C(x) = x^4-2x^3-4x^2-8x-16$ y $R(x)=0$.
+
+a. $C(x) = x^4+2x^3+4x^2+8x+16$ y $R(x)=0$. (*)
+
+a. $C(x)=x^4+2x^3+4x^2+8x+16$ y $R(x)=2$.
+
+a. $C(x)= x^4-2x^3-4x^2-8x-16$ y $R(x)=2$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-06}
+La expresión $\dfrac{a}{b+a}-\dfrac{b}{b-a}$, siendo $a$ y $b$ dos constantes, es igual a:
+
+a.  $-1$.
+
+a.  $\dfrac{a^2+b^2}{a^2-b^2}$. (*)
+
+a.  $\dfrac{a^2+b^2}{b^2-a^2}$.
+
+a.  $a+b$.
+
+a.  Las otras opciones son falsas.
+:::
+
+:::{#exr-07}
+Si $x$ e $y$ están relacionadas mediante la ecuación $3x+y=2$ entonces
+
+a. $y$ aumenta una unidad por cada unidad que aumenta $x$.
+
+a. $y$ disminuye 2 unidades por cada unidad que aumenta $x$.
+
+a. $x$ aumenta un tercio de unidad por cada unidad que aumenta $y$.
+
+a. $y$ aumenta 3 unidades por cada unidad que aumenta $x$.
+
+a. Las otras opciones son falsas. (*)
+:::
+
+:::{#exr-08}
+Las raíces del polinomio $x^2-5x+6$ son
+
+a. $-3$ y $-2$.
+
+a. $2$ y $3$. (*)
+
+a. $-2$ y $3$.
+
+a. No tiene raíces reales.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-9}
+La distancia entre los puntos del plano $(2,3)$ y $(5,7)$ es
+
+a. $4$.
+
+a. $5$. (*)
+
+a. $3$.
+
+a. $6$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-10}
+El producto escalar de los vectores $(1,0,-2)$ y $(3,-1,2)$ es 
+
+a. $-1$. (*)
+
+a. $0$.
+
+a. $-2$.
+
+a. $3$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-11}
+Dada la matriz 
+
+$$
+A=
+\left(
+\begin{array}{cc}
+1 & 2 \\
+-1 & 1 \\
+\end{array}
+\right)
+$$
+
+su determinante vale 
+
+a. $0$.
+
+a. $-3$. 
+
+a. $3$. (*)
+
+a. $2$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-12}
+Dado el sistema de ecuaciones 
+
+$$
+\left\{
+\begin{array}{l}
+2x-y=-1 \\
+kx+y=2 \\
+\end{array}
+\right.
+$$
+
+¿Cuál de las siguientes afirmaciones es correcta?
+
+a. Para ningún valor de $k$ el sistema es compatible.
+
+a. Para sólo un valor de $k$ el sistema es compatible.
+
+a. El sistema es homogéneo.
+
+a. Si el sistema es compatible, tiene que ser determinado. (*)
+
+a. Las otras afirmaciones son falsas.
+:::
+
+:::{#exr-13}
+La expresión $2\ln(a)-3\ln(b)$, siendo $a$ y $b$ dos constantes, es igual a:
+
+a. $\ln(a^2-b^3)$.
+
+a. $\ln(a^2b^3)$.
+
+a. $\ln\left(\frac{a^2}{b^3}\right)$. (*)
+
+a. $e^{2a+3b}$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-14}
+Dada la función $a^x$, con $a>0$ una constante, ¿cuál de las siguientes afirmaciones es falsa?
+
+a. Tiene como dominio todo $\mathbb{R}$.
+
+a. No puede tomar valores negativos.
+
+a. Es creciente en todo su dominio. (*)
+
+a. No tiene extremos relativos.
+
+a. Su gráfica pasa por el punto $(0,1)$.
+:::
+
+:::{#exr-15}
+La función $g(x)= 2\cos(x/2)$
+
+a. Tiene periodo $2\pi$.
+
+a. Tiene periodo $4\pi$. (*)
+
+a. Tiene periodo $\pi$.
+
+a. Tiene periodo $\pi/2$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-16}
+La función inversa de la función $f(x)=\operatorname{arcsen}(x^3)$ es
+
+a. $g(y)=\operatorname{sen}\left(\frac{1}{y^3}\right)$.
+
+a. $g(y)=\operatorname{sen}(\sqrt[3]{y})$.
+
+a. $g(y)=\frac{1}{\operatorname{arcsen}(y^3)}$
+
+a. $g(y)=\sqrt[3]{\operatorname{sen}(y)}$. (*)
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-17}
+El límite $\lim_{x\to\infty} \dfrac{2x^2-5}{\sqrt{3x^4-2}}$ da como resultado 
+
+a. $0$.
+
+a. $\frac{2}{3}$.
+
+a. $\infty$.
+
+a. $\frac{2\sqrt{3}}{3}$. (*)
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-18}
+El límite $\lim_{x\to 0}\dfrac{\operatorname{sen}(x)}{x}$ vale
+
+a. $0$.
+
+a. $\infty$.
+
+a. $1$. (*)
+
+a. No existe.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-19}
+La función $h(x)=\dfrac{3x^2+2x+1}{4x^2+5}$ 
+
+a. Tiene una asíntota horizontal $y=\frac{3}{4}$. (*)
+
+a. Tiene una asíntota vertical $x=\frac{\sqrt{5}}{2}$.
+
+a. Tiene una asíntota oblicua $y=\frac{4}{3}x-1$.
+
+a. No tiene asíntotas.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-20}
+La función $f(x)=\frac{x^3-x}{x+1}$ 
+
+a. Tiene una discontinuidad evitable en $x=1$. (*)
+
+a. Tiene una discontinuidad de salto finito en $x=1$.
+
+a. Tiene una discontinuidad de salto infinito en $x=1$.
+
+a. Es continua en $x=1$.
+
+a. Las otras opciones son falsas. 
+:::
+
+:::{#exr-21}
+La derivada de la función $f(x)=\ln(\sqrt{x/2})$ es
+
+a. $\frac{1}{\sqrt{x/2}}$.
+
+a. $\frac{1}{x/2}$.
+
+a. $\frac{1}{2x}$. (*)
+
+a. $\frac{1}{x}$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-22}
+La recta tangente a la gráfica de la función $f(x)=x^3-2x^2+x-2$ en $x=2$ vale
+
+a. $y=5x$.
+
+a. $y=2x-5$.
+
+a. $y=5x-10$. (*)
+
+a. $y=2x+10$.
+
+a. Las otras opciones son falsas.
+:::
+
+:::{#exr-23}
+La función $h(x)=x^2+2x+1$, 
+
+a. Tiene un máximo relativo en $x=-1$.
+
+a. Tiene un mínimo relativo en $x=1$.
+
+a. Tiene un punto de inflexión en $x=1$.
+
+a. Tiene un punto de inflexión en $x=-1$.
+
+a. Las otras opciones son falsas. (*)
+:::
+
+:::{#exr-24}
+La integral $\int x \ln(x) \, dx$ es
+
+- $\frac{x^2 \ln(x)}{2} - \frac{x^2}{4} + C$
+- $\frac{x^2 \ln(x)}{2} + C$
+- $x \ln(x) - x + C$
+- $\frac{x^2 \ln(x)}{2} - x + C$
+- Las otras opciones son falsas. (*)
+:::
+
+:::{#exr-25}
+El área encerrada entre la gráfica de la función $g(x)=\cos(x/2)$ y el eje $x$ en el intervalo $[0,2\pi]$ es
+
+a. $0$.
+
+a. $1$.
+
+a. $\pi$.
+
+a. $4$. (*)
+
+a. Las otras opciones son falsas.
+:::

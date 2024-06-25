@@ -1,0 +1,801 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{scrreport}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exercise}{Ejercicio}[chapter]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Prueba}}
+\newtheorem*{remark}{Observación}
+\newtheorem*{solution}{Solución}
+\newtheorem{refremark}{Observación}[chapter]
+\newtheorem{refsolution}{Solución}[chapter]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Test de nivel de Cálculo},
+  pdfauthor={Alfredo Sánchez Alberca},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Test de nivel de Cálculo}
+\author{Alfredo Sánchez Alberca}
+\date{2023-01-06}
+
+\begin{document}
+\begin{titlepage}
+
+%\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.8]{img/background2}}} % Imagen de fondo, requiere el paquete eso-pic.
+\begin{center}
+\vspace*{5cm}
+
+\Huge
+{\textbf{\textsf{Test de nivel de Cálculo}}}
+
+\vspace{0.5cm}
+\LARGE
+{\textbf{\textsf{}}}
+
+\vspace{1.5cm}
+
+\includegraphics[width=0.4\textwidth]{img/logos/sticker.png}
+\end{center}
+
+\vfill
+
+\begin{flushleft}
+\begin{tabular}{ll}
+\includegraphics[width=0.1\textwidth]{img/logos/aprendeconalf.png} & \parbox[b]{5cm}{\Large\textsf{Alfredo
+Sánchez
+Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
+\end{tabular}
+\end{flushleft}
+\end{titlepage}
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\chapter*{Prefacio}\label{prefacio}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+\markboth{Prefacio}{Prefacio}
+
+¡Bienvenido al test de nivel de Cálculo!
+
+Este test está pensado para determinar el nivel de Cálculo de los
+alumnos que comienzan un grado de Ciencias o Ingeniería y cuáles son los
+temas con más carencias que debería reforzar.
+
+\section*{Licencia}\label{licencia}
+\addcontentsline{toc}{section}{Licencia}
+
+\markright{Licencia}
+
+Esta obra está bajo una licencia Reconocimiento -- No comercial --
+Compartir bajo la misma licencia 3.0 España de Creative Commons. Para
+ver una copia de esta licencia, visite
+\url{https://creativecommons.org/licenses/by-nc-sa/3.0/es/}.
+
+Con esta licencia eres libre de:
+
+\begin{itemize}
+\tightlist
+\item
+  Copiar, distribuir y mostrar este trabajo.
+\item
+  Realizar modificaciones de este trabajo.
+\end{itemize}
+
+Bajo las siguientes condiciones:
+
+\begin{itemize}
+\item
+  \textbf{Reconocimiento}. Debe reconocer los créditos de la obra de la
+  manera especificada por el autor o el licenciador (pero no de una
+  manera que sugiera que tiene su apoyo o apoyan el uso que hace de su
+  obra).
+\item
+  \textbf{No comercial}. No puede utilizar esta obra para fines
+  comerciales.
+\item
+  \textbf{Compartir bajo la misma licencia}. Si altera o transforma esta
+  obra, o genera una obra derivada, sólo puede distribuir la obra
+  generada bajo una licencia idéntica a ésta.
+\end{itemize}
+
+Al reutilizar o distribuir la obra, tiene que dejar bien claro los
+términos de la licencia de esta obra.
+
+Estas condiciones pueden no aplicarse si se obtiene el permiso del
+titular de los derechos de autor.
+
+Nada en esta licencia menoscaba o restringe los derechos morales del
+autor.
+
+\bookmarksetup{startatroot}
+
+\chapter{Test de nivel de Cálculo}\label{test-de-nivel-de-cuxe1lculo}
+
+\begin{exercise}[]\protect\hypertarget{exr-01}{}\label{exr-01}
+
+Si una máquina fabrica 10800 pastillas en una hora, ¿cuántas pastillas
+fabrica la máquina por segundo?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(1\).
+\item
+  \(180\).
+\item
+  \(3\). (*)
+\item
+  \(5\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-02}{}\label{exr-02}
+
+El resultado de la operación \(\dfrac{\sqrt{81}}{\sqrt{9}}\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(\sqrt{3}\).
+\item
+  \(\sqrt{9}\). (*)
+\item
+  \(\sqrt{27}\).
+\item
+  \(\sqrt{7}\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-03}{}\label{exr-03}
+
+La solución de la ecuación \(5^x=625\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(5\).
+\item
+  \(4\). (*)
+\item
+  \(3\).
+\item
+  \(6\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-04}{}\label{exr-04}
+
+El resultado de la operación \((x^2+3x+2)(x+2)\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(x^3+5x^2+7x+4\).
+\item
+  \(x^3+2x^2+7x+2\).
+\item
+  \(x^3+2x^2+5x+4\).
+\item
+  \(x^3+2x^2+8x+4\).
+\item
+  Las otras opciones son falsas. (*)
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-05}{}\label{exr-05}
+
+Si dividimos \(x^5-32\) entre \(x-2\) se obtiene un cociente \(C(x)\) y
+un resto \(R(x)\) igual a:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(C(x) = x^4-2x^3-4x^2-8x-16\) y \(R(x)=0\).
+\item
+  \(C(x) = x^4+2x^3+4x^2+8x+16\) y \(R(x)=0\). (*)
+\item
+  \(C(x)=x^4+2x^3+4x^2+8x+16\) y \(R(x)=2\).
+\item
+  \(C(x)= x^4-2x^3-4x^2-8x-16\) y \(R(x)=2\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-06}{}\label{exr-06}
+
+La expresión \(\dfrac{a}{b+a}-\dfrac{b}{b-a}\), siendo \(a\) y \(b\) dos
+constantes, es igual a:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(-1\).
+\item
+  \(\dfrac{a^2+b^2}{a^2-b^2}\). (*)
+\item
+  \(\dfrac{a^2+b^2}{b^2-a^2}\).
+\item
+  \(a+b\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-07}{}\label{exr-07}
+
+Si \(x\) e \(y\) están relacionadas mediante la ecuación \(3x+y=2\)
+entonces
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(y\) aumenta una unidad por cada unidad que aumenta \(x\).
+\item
+  \(y\) disminuye 2 unidades por cada unidad que aumenta \(x\).
+\item
+  \(x\) aumenta un tercio de unidad por cada unidad que aumenta \(y\).
+\item
+  \(y\) aumenta 3 unidades por cada unidad que aumenta \(x\).
+\item
+  Las otras opciones son falsas. (*)
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-08}{}\label{exr-08}
+
+Las raíces del polinomio \(x^2-5x+6\) son
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(-3\) y \(-2\).
+\item
+  \(2\) y \(3\). (*)
+\item
+  \(-2\) y \(3\).
+\item
+  No tiene raíces reales.
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-9}{}\label{exr-9}
+
+La distancia entre los puntos del plano \((2,3)\) y \((5,7)\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(4\).
+\item
+  \(5\). (*)
+\item
+  \(3\).
+\item
+  \(6\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-10}{}\label{exr-10}
+
+El producto escalar de los vectores \((1,0,-2)\) y \((3,-1,2)\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(-1\). (*)
+\item
+  \(0\).
+\item
+  \(-2\).
+\item
+  \(3\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-11}{}\label{exr-11}
+
+Dada la matriz
+
+\[
+A=
+\left(
+\begin{array}{cc}
+1 & 2 \\
+-1 & 1 \\
+\end{array}
+\right)
+\]
+
+su determinante vale
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(0\).
+\item
+  \(-3\).
+\item
+  \(3\). (*)
+\item
+  \(2\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-12}{}\label{exr-12}
+
+Dado el sistema de ecuaciones
+
+\[
+\left\{
+\begin{array}{l}
+2x-y=-1 \\
+kx+y=2 \\
+\end{array}
+\right.
+\]
+
+¿Cuál de las siguientes afirmaciones es correcta?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Para ningún valor de \(k\) el sistema es compatible.
+\item
+  Para sólo un valor de \(k\) el sistema es compatible.
+\item
+  El sistema es homogéneo.
+\item
+  Si el sistema es compatible, tiene que ser determinado. (*)
+\item
+  Las otras afirmaciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-13}{}\label{exr-13}
+
+La expresión \(2\ln(a)-3\ln(b)\), siendo \(a\) y \(b\) dos constantes,
+es igual a:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(\ln(a^2-b^3)\).
+\item
+  \(\ln(a^2b^3)\).
+\item
+  \(\ln\left(\frac{a^2}{b^3}\right)\). (*)
+\item
+  \(e^{2a+3b}\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-14}{}\label{exr-14}
+
+Dada la función \(a^x\), con \(a>0\) una constante, ¿cuál de las
+siguientes afirmaciones es falsa?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tiene como dominio todo \(\mathbb{R}\).
+\item
+  No puede tomar valores negativos.
+\item
+  Es creciente en todo su dominio. (*)
+\item
+  No tiene extremos relativos.
+\item
+  Su gráfica pasa por el punto \((0,1)\).
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-15}{}\label{exr-15}
+
+La función \(g(x)= 2\cos(x/2)\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tiene periodo \(2\pi\).
+\item
+  Tiene periodo \(4\pi\). (*)
+\item
+  Tiene periodo \(\pi\).
+\item
+  Tiene periodo \(\pi/2\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-16}{}\label{exr-16}
+
+La función inversa de la función \(f(x)=\operatorname{arcsen}(x^3)\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(g(y)=\operatorname{sen}\left(\frac{1}{y^3}\right)\).
+\item
+  \(g(y)=\operatorname{sen}(\sqrt[3]{y})\).
+\item
+  \(g(y)=\frac{1}{\operatorname{arcsen}(y^3)}\)
+\item
+  \(g(y)=\sqrt[3]{\operatorname{sen}(y)}\). (*)
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-17}{}\label{exr-17}
+
+El límite \(\lim_{x\to\infty} \dfrac{2x^2-5}{\sqrt{3x^4-2}}\) da como
+resultado
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(0\).
+\item
+  \(\frac{2}{3}\).
+\item
+  \(\infty\).
+\item
+  \(\frac{2\sqrt{3}}{3}\). (*)
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-18}{}\label{exr-18}
+
+El límite \(\lim_{x\to 0}\dfrac{\operatorname{sen}(x)}{x}\) vale
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(0\).
+\item
+  \(\infty\).
+\item
+  \(1\). (*)
+\item
+  No existe.
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-19}{}\label{exr-19}
+
+La función \(h(x)=\dfrac{3x^2+2x+1}{4x^2+5}\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tiene una asíntota horizontal \(y=\frac{3}{4}\). (*)
+\item
+  Tiene una asíntota vertical \(x=\frac{\sqrt{5}}{2}\).
+\item
+  Tiene una asíntota oblicua \(y=\frac{4}{3}x-1\).
+\item
+  No tiene asíntotas.
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-20}{}\label{exr-20}
+
+La función \(f(x)=\frac{x^3-x}{x+1}\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tiene una discontinuidad evitable en \(x=1\). (*)
+\item
+  Tiene una discontinuidad de salto finito en \(x=1\).
+\item
+  Tiene una discontinuidad de salto infinito en \(x=1\).
+\item
+  Es continua en \(x=1\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-21}{}\label{exr-21}
+
+La derivada de la función \(f(x)=\ln(\sqrt{x/2})\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(\frac{1}{\sqrt{x/2}}\).
+\item
+  \(\frac{1}{x/2}\).
+\item
+  \(\frac{1}{2x}\). (*)
+\item
+  \(\frac{1}{x}\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-22}{}\label{exr-22}
+
+La recta tangente a la gráfica de la función \(f(x)=x^3-2x^2+x-2\) en
+\(x=2\) vale
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(y=5x\).
+\item
+  \(y=2x-5\).
+\item
+  \(y=5x-10\). (*)
+\item
+  \(y=2x+10\).
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-23}{}\label{exr-23}
+
+La función \(h(x)=x^2+2x+1\),
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tiene un máximo relativo en \(x=-1\).
+\item
+  Tiene un mínimo relativo en \(x=1\).
+\item
+  Tiene un punto de inflexión en \(x=1\).
+\item
+  Tiene un punto de inflexión en \(x=-1\).
+\item
+  Las otras opciones son falsas. (*)
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-24}{}\label{exr-24}
+
+La integral \(\int x \ln(x) \, dx\) es
+
+\begin{itemize}
+\tightlist
+\item
+  \(\frac{x^2 \ln(x)}{2} - \frac{x^2}{4} + C\)
+\item
+  \(\frac{x^2 \ln(x)}{2} + C\)
+\item
+  \(x \ln(x) - x + C\)
+\item
+  \(\frac{x^2 \ln(x)}{2} - x + C\)
+\item
+  Las otras opciones son falsas. (*)
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}[]\protect\hypertarget{exr-25}{}\label{exr-25}
+
+El área encerrada entre la gráfica de la función \(g(x)=\cos(x/2)\) y el
+eje \(x\) en el intervalo \([0,2\pi]\) es
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(0\).
+\item
+  \(1\).
+\item
+  \(\pi\).
+\item
+  \(4\). (*)
+\item
+  Las otras opciones son falsas.
+\end{enumerate}
+
+\end{exercise}
+
+
+
+\end{document}

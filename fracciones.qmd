@@ -1,0 +1,28 @@
+---
+title: Fracciones
+lang: es
+jupyter: julia-1.9
+---
+
+```{julia}
+#| echo: false
+#| results: "hidden"
+using SymPy, Plots, QuizQuestions, LaTeXStrings
+nothing
+```
+
+:::{#exr-fra-01}
+La expresión $\dfrac{a}{b+a}-\frac{b}{b-a}$, siendo $a$ y $b$ dos constantes, es igual a:
+
+```{julia}
+#| echo: false
+choices = (
+    L"$-1$.", 
+    L"$\dfrac{a^2+b^2}{a^2-b^2}$.", 
+    L"$\dfrac{a^2+b^2}{b^2-a^2}$", 
+    L"$a+b$.",
+    L"Las otras opciones son falsas.")
+answer = 2
+radioq(choices, answer)
+```
+
